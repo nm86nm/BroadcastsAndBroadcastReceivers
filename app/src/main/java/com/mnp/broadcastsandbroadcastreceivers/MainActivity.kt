@@ -32,25 +32,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val myReceiver1: BroadcastReceiver = object : BroadcastReceiver() {
-                        override fun onReceive(context: Context, intent: Intent) {
-                            Toast.makeText(context, "Device connected to charger", Toast.LENGTH_LONG).show()
-                        }
-                    }
+                    ActionPowerReceiver()
 
-                    val myReceiver2: BroadcastReceiver = object : BroadcastReceiver() {
-                        override fun onReceive(context: Context, intent: Intent) {
-                            Toast.makeText(context, "Device disconnected from charger", Toast.LENGTH_LONG).show()
-                        }
-                    }
-
-                    registerReceiver(myReceiver1,  IntentFilter(Intent.ACTION_POWER_CONNECTED),
-                        RECEIVER_NOT_EXPORTED
-                    )
-
-                    registerReceiver(myReceiver2,  IntentFilter(Intent.ACTION_POWER_DISCONNECTED),
-                        RECEIVER_NOT_EXPORTED
-                    )
+                    registerReceiver(ActionPowerReceiver().actionPowerConnected, IntentFilter("android.intent.action.ACTION_POWER_CONNECTED"))
+                    registerReceiver(ActionPowerReceiver().actionPowerDisconnected, IntentFilter("android.intent.action.ACTION_POWER_DISCONNECTED"))
                 }
             }
         }
