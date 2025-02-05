@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     registerReceiver(ActionPowerReceiver().actionPowerConnected, IntentFilter("android.intent.action.ACTION_POWER_CONNECTED"))
                     registerReceiver(ActionPowerReceiver().actionPowerDisconnected, IntentFilter("android.intent.action.ACTION_POWER_DISCONNECTED"))
+                    registerReceiver(ActionShutdownReceiver(), IntentFilter("android.intent.action.ACTION_SHUTDOWN"))
                 }
             }
         }
