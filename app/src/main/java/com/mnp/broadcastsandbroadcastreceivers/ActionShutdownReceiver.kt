@@ -7,6 +7,6 @@ import android.util.Log
 
 class ActionShutdownReceiver : BroadcastReceiver() {
     override fun onReceive(p0: Context?, p1: Intent?) {
-        Log.i("TAG", "<!><!><!>Shutting down (message id: 123761)")
+        Log.d("TAG", "<!><!><!>Shutting down (message id: 123761)")
     }
 }

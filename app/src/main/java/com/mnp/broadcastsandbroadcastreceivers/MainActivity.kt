@@ -26,9 +26,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    registerReceiver(ActionPowerReceiver().actionPowerConnected, IntentFilter("android.intent.action.ACTION_POWER_CONNECTED"))
-                    registerReceiver(ActionPowerReceiver().actionPowerDisconnected, IntentFilter("android.intent.action.ACTION_POWER_DISCONNECTED"))
-                    registerReceiver(ActionShutdownReceiver(), IntentFilter("android.intent.action.ACTION_SHUTDOWN"))
+                    registerReceiver(
+                        ActionPowerReceiver().actionPowerConnected,
+                        IntentFilter("android.intent.action.ACTION_POWER_CONNECTED")
+                    )
+                    registerReceiver(
+                        ActionPowerReceiver().actionPowerDisconnected,
+                        IntentFilter("android.intent.action.ACTION_POWER_DISCONNECTED")
+                    )
+                    registerReceiver(
+                        AirplaneModeReceiver(),
+                        IntentFilter("android.intent.action.AIRPLANE_MODE")
+                    )
                 }
             }
         }
