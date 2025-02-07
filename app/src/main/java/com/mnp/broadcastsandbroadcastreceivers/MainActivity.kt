@@ -38,6 +38,10 @@ class MainActivity : ComponentActivity() {
                         AirplaneModeReceiver(),
                         IntentFilter("android.intent.action.AIRPLANE_MODE")
                     )
+                    registerReceiver(
+                        BatteryReceiver().batteryReceiver,
+                        IntentFilter("android.intent.action.BATTERY_CHANGED")
+                    )
                 }
             }
         }
