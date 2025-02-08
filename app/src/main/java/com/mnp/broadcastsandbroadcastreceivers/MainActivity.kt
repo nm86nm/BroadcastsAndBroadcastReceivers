@@ -39,8 +39,16 @@ class MainActivity : ComponentActivity() {
                         IntentFilter("android.intent.action.AIRPLANE_MODE")
                     )
                     registerReceiver(
-                        BatteryReceiver().batteryReceiver,
+                        BatteryReceiver().batteryChanged,
                         IntentFilter("android.intent.action.BATTERY_CHANGED")
+                    )
+                    registerReceiver(
+                        BatteryReceiver().batteryLow,
+                        IntentFilter("android.intent.action.BATTERY_LOW")
+                    )
+                    registerReceiver(
+                        BatteryReceiver().batteryOkay,
+                        IntentFilter("android.intent.action.BATTERY_OKAY")
                     )
                 }
             }
