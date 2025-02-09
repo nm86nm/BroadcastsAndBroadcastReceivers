@@ -50,6 +50,10 @@ class MainActivity : ComponentActivity() {
                         BatteryReceiver().batteryOkay,
                         IntentFilter("android.intent.action.BATTERY_OKAY")
                     )
+                    registerReceiver(
+                        ApplicationLocaleChangedReceiver(),
+                        IntentFilter("android.intent.action.APPLICATION_LOCALE_CHANGED")
+                    )
                 }
             }
         }
