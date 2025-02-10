@@ -49,7 +49,7 @@
                 <action android:name="android.intent.action.BATTERY_OKAY" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".AirplaneModeReceiver"
+        <receiver android:name=".ApplicationLocaleChangedReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_LOCALE_CHANGED" />
