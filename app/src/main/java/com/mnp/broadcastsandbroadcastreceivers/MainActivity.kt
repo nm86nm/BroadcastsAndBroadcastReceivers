@@ -10,6 +10,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.mnp.broadcastsandbroadcastreceivers.receiver.ActionPowerReceiver
+import com.mnp.broadcastsandbroadcastreceivers.receiver.AirplaneModeReceiver
+import com.mnp.broadcastsandbroadcastreceivers.receiver.ApplicationLocaleChangedReceiver
+import com.mnp.broadcastsandbroadcastreceivers.receiver.ApplicationRestrictionsReceiver
+import com.mnp.broadcastsandbroadcastreceivers.receiver.BatteryReceiver
 import com.mnp.broadcastsandbroadcastreceivers.ui.theme.BroadcastsAndBroadcastReceiversTheme
 
 
@@ -53,6 +58,10 @@ class MainActivity : ComponentActivity() {
                     registerReceiver(
                         ApplicationLocaleChangedReceiver(),
                         IntentFilter("android.intent.action.APPLICATION_LOCALE_CHANGED")
+                    )
+                    registerReceiver(
+                        ApplicationRestrictionsReceiver(),
+                        IntentFilter("android.intent.action.APPLICATION_RESTRICTIONS_CHANGED")
                     )
                 }
             }
