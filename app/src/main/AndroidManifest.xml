@@ -47,7 +47,7 @@
                 <action android:name="android.intent.action.APPLICATION_LOCALE_CHANGED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=""
+        <receiver android:name=".receiver.ApplicationRestrictionsReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_RESTRICTIONS_CHANGED" />
@@ -61,6 +61,12 @@
                 <action android:name="android.intent.action.BATTERY_OKAY" />
             </intent-filter>
         </receiver>
+        <!--<receiver android:name=".receiver.ApplicationRestrictionsReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>-->
     </application>
 
 </manifest>
