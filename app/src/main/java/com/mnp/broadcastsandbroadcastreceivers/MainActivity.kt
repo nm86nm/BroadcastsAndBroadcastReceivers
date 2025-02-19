@@ -15,6 +15,7 @@ import com.mnp.broadcastsandbroadcastreceivers.receiver.AirplaneModeReceiver
 import com.mnp.broadcastsandbroadcastreceivers.receiver.ApplicationLocaleChangedReceiver
 import com.mnp.broadcastsandbroadcastreceivers.receiver.ApplicationRestrictionsReceiver
 import com.mnp.broadcastsandbroadcastreceivers.receiver.BatteryReceiver
+import com.mnp.broadcastsandbroadcastreceivers.receiver.BootCompletedReceiver
 import com.mnp.broadcastsandbroadcastreceivers.ui.theme.BroadcastsAndBroadcastReceiversTheme
 
 
@@ -62,6 +63,10 @@ class MainActivity : ComponentActivity() {
                     registerReceiver(
                         ApplicationRestrictionsReceiver(),
                         IntentFilter("android.intent.action.APPLICATION_RESTRICTIONS_CHANGED")
+                    )
+                    registerReceiver(
+                        BootCompletedReceiver(),
+                        IntentFilter("android.intent.action.BOOT_COMPLETED")
                     )
                 }
             }
