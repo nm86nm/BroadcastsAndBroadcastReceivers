@@ -61,12 +61,12 @@
                 <action android:name="android.intent.action.BATTERY_OKAY" />
             </intent-filter>
         </receiver>
-        <!--<receiver android:name=".receiver.ApplicationRestrictionsReceiver"
+        <receiver android:name=".receiver.ApplicationRestrictionsReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </receiver>-->
+        </receiver>
     </application>
 
 </manifest>
